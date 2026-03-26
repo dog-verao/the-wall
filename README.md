@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/dog-verao/the-wall/main/docs/logo.png" alt="The Wall Logo" width="120" />
   <h1>⚔️ THE WALL</h1>
   <p><b>The Wall between AI-generated code and production.</b></p>
   <p><i>"The code is dark and full of terrors."</i></p>
