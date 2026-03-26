@@ -4,8 +4,6 @@
   <p><i>"The code is dark and full of terrors."</i></p>
 
   [![Version](https://img.shields.io/npm/v/@dog-verao/the-wall?color=white&label=Version)](https://www.npmjs.com/package/@dog-verao/the-wall)
-  [![License](https://img.shields.io/github/license/dog-verao/the-wall?color=white&label=License)](LICENSE)
-  [![Build Status](https://img.shields.io/github/actions/workflow/status/dog-verao/the-wall/ci.yml?branch=main&color=white&label=Build)](https://github.com/dog-verao/the-wall/actions)
 </div>
 
 ---
@@ -90,8 +88,8 @@ If you want to contribute or run the project from source:
 
 1. **Clone the repo:**
    ```bash
-   git clone https://github.com/dog-verao/the-wall.git
-   cd the-wall
+   git clone https://github.com/dog-verao/security-checker.git
+   cd security-checker
    ```
 
 2. **Install dependencies:**
