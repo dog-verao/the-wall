@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wall | Protection for AI-Generated Code</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050505;
+            --accent: #ffffff;
+            --border: rgba(255, 255, 255, 0.1);
+            --text-main: #e0e0e0;
+            --text-dim: #888888;
+            --glass: rgba(255, 255, 255, 0.03);
+            --critical: #ff4d4d;
+            --high: #ff9933;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Ambient Glow */
+        .glow {
+            position: fixed;
+            top: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80vw;
+            height: 60vh;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            padding-top: 80px;
+            text-align: center;
+        }
+
+        .main-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 24px;
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.1));
+        }
+
+        .logo-text {
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        h1 {
+            font-size: 72px;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
+        }
+
+        .tagline {
+            font-size: 20px;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto 48px;
+        }
+
+        .cta-box {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 24px;
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            font-family: 'JetBrains Mono', monospace;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 120px;
+        }
+
+        .cta-box:hover {
+            border-color: rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .command {
+            color: #fff;
+            font-size: 15px;
+        }
+
+        .copy-icon {
+            opacity: 0.5;
+            width: 16px;
+        }
+
+        /* Features */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 120px;
+        }
+
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 24px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--text-dim);
+            font-size: 16px;
+        }
+
+        /* Terminal Preview */
+        .terminal {
+            background: #000;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            margin-bottom: 120px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .terminal-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .line { margin-bottom: 4px; }
+        .critical { color: var(--critical); }
+        .high { color: var(--high); }
+        .dim { color: var(--text-dim); }
+        .white { color: #fff; }
+
+        footer {
+            padding: 80px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 48px; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="glow"></div>
+    
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="The Wall Logo" class="main-logo">
+            <div class="logo-text">The Wall</div>
+            <h1>The line between AI<br>and Production.</h1>
+            <p class="tagline">Zero-config security scanner for AI-generated code. Catch logic flaws, hardcoded secrets, and vulnerabilities in seconds.</p>
+            
+            <div class="cta-box" onclick="copyCommand()">
+                <span class="command">npx @dog-verao/the-wall</span>
+                <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </div>
+        </header>
+
+        <section class="grid">
+            <div class="card">
+                <h3>Static Analysis</h3>
+                <p>80+ predefined rules for secrets, auth, and injections. Fast as the winter wind.</p>
+            </div>
+            <div class="card">
+                <h3>AI Logic Engine</h3>
+                <p>Optionally use LLMs to find complex business logic flaws like IDOR and mass assignment.</p>
+            </div>
+            <div class="card">
+                <h3>Safe Install</h3>
+                <p>Protect your dependencies. Detects typosquatting and suspicious new packages automatically.</p>
+            </div>
+            <div class="card">
+                <h3>CI/CD Guard</h3>
+                <p>Built-in CI mode with configurable failure thresholds for your delivery pipeline.</p>
+            </div>
+        </section>
+
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="line dim">$ npx @dog-verao/the-wall</div>
+            <div class="line white">⚔️  THE WALL</div>
+            <div class="line dim">The code is dark and full of terrors.</div>
+            <div class="line"></div>
+            <div class="line dim">Scanning src/ ...</div>
+            <div class="line"></div>
+            <div class="line critical">🚨 CRITICAL — Hardcoded API key in source</div>
+            <div class="line dim">   → File: src/client.ts:L12</div>
+            <div class="line high">⚠️ HIGH — No auth middleware on route /api/admin</div>
+            <div class="line dim">   → File: src/api/admin.ts:L45</div>
+            <div class="line"></div>
+            <div class="line white">🛑 2 issues found (1 critical, 1 high)</div>
+        </div>
+
+        <footer>
+            <p>Built by dog-verao</p>
+            <p style="margin-top: 8px;">The night is dark. Use AI for deep analysis.</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyCommand() {
+            navigator.clipboard.writeText('npx @dog-verao/the-wall');
+            alert('Command copied to clipboard!');
+        }
+    </script>
+</body>
+</html>
