@@ -14,7 +14,7 @@ import { runConfigWizard } from "./configure";
 import { runSafeInstall } from "./install";
 
 const VALID_SEVERITIES: Severity[] = ["critical", "high", "medium", "info"];
-const VERSION = "0.2.1";
+const VERSION = "0.2.2";
 
 const BANNER = `
 ${chalk.bold.white("⚔️  THE WALL")}  ${chalk.dim(`v${VERSION}`)}

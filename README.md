@@ -3,7 +3,9 @@
   <p><b>The Wall between AI-generated code and production.</b></p>
   <p><i>"The code is dark and full of terrors."</i></p>
 
-  [![Version](https://img.shields.io/npm/v/@dog-verao/the-wall?color=white&label=Version)](https://www.npmjs.com/package/@dog-verao/the-wall)
+  [![npm version](https://img.shields.io/npm/v/@dog-verao/the-wall?color=white&label=Version)](https://www.npmjs.com/package/@dog-verao/the-wall)
+  [![npm downloads](https://img.shields.io/npm/dm/@dog-verao/the-wall?color=white&label=Downloads)](https://www.npmjs.com/package/@dog-verao/the-wall)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-white.svg)](LICENSE)
 </div>
 
 ---
@@ -14,10 +16,24 @@
 
 ## 🚀 Quick Start
 
-No installation required. Run it anywhere with `npx`:
+**Run instantly with npx (no install needed):**
 
 ```bash
 npx @dog-verao/the-wall
+```
+
+**Or install globally for a shorter command:**
+
+```bash
+npm install -g @dog-verao/the-wall
+the-wall
+```
+
+**Or add as a dev dependency to your project:**
+
+```bash
+npm install -D @dog-verao/the-wall
+npx the-wall
 ```
 
 ---
@@ -88,8 +104,8 @@ If you want to contribute or run the project from source:
 
 1. **Clone the repo:**
    ```bash
-   git clone https://github.com/dog-verao/security-checker.git
-   cd security-checker
+   git clone https://github.com/dog-verao/the-wall.git
+   cd the-wall
    ```
 
 2. **Install dependencies:**

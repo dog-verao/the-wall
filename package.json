@@ -1,9 +1,13 @@
 {
   "name": "@dog-verao/the-wall",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "The Wall between AI-generated code and production. Zero config, plain English security scanning.",
   "keywords": ["security", "ai", "vibe-coding", "static-analysis", "cli", "the-wall", "got"],
   "homepage": "https://github.com/dog-verao/the-wall",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dog-verao/the-wall.git"
+  },
   "license": "MIT",
   "type": "commonjs",
   "main": "dist/cli.js",
@@ -11,7 +15,7 @@
     "access": "public"
   },
   "bin": {
-    "the-wall": "dist/cli.js"
+    "the-wall": "./dist/cli.js"
   },
   "files": [
     "dist/**/*",
